@@ -1,0 +1,40 @@
+@import "./common/colors.scss";
+.photo {
+    border-radius: 50%;
+    align-self: center;
+    padding-right: 6px;
+    height: 40px;
+}
+.playerClass {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+}
+.score {
+    justify-self: end;
+    span {
+      color: $blueColor;
+    }
+}
+.player_container {
+    display: flex;
+    margin-top: 18px;
+}
+#best_player {
+    width: 80%;
+    margin: 0 auto;
+}
+.email {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0px;
+}
+.name {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px;
+    padding-bottom: 1px;
+}
+
+
