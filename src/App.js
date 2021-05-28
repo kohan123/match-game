@@ -1,7 +1,8 @@
 import './App.css';
 import BestPlayers from "./best-players"
 import ButtonClick from './button-click';
-import { bestPlayers } from './test-data';
+import CardList from './card/card-list';
+import { bestPlayers, cardList } from './test-data';
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
       <header className="App-header">
         {/* <BestPlayers players={bestPlayers} />
         <ButtonClick className="blueButton" text="ADD USER"/>
-        <ButtonClick className="witeButton" text="CANCEL"/> */}
+        <ButtonClick className="witeButton" text="CANCEL"/> */
+        }
+        <CardList cards={cardList} />
       </header>
     </div>
   );

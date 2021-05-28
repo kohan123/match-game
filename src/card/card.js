@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "./card.scss";
 import PropTypes from "prop-types";
 import img from "../assets/card.png";
 
 
-const Card = ({image}) => {
-    return <div style={{backgroundImage: `url(${image})`}} className="cards">
+const Card = ({image, backImage}) => {
+    const [isFlip, setIsFlip] = useState(false);
+    const flipFn = () => {
+      setIsFlip(true);
+      setTimeout(() => {
+        setIsFlip(false);
+      },3000);
+    }
+    
+    return <div onClick={flipFn} className={`flip-card ${isFlip === true ? "flip" : ""}`}>
+    <div className="flip-card-inner">
+      <div style={{backgroundImage: `url(${backImage})`}} className="flip-card-front"/>
+      <div style={{backgroundImage: `url(${image})`}} className="flip-card-back"/>
     </div>
+  </div>
 };
 
 Card.defaultProps = {
-    text: img
+    
   }
   
   Card.propTypes = {
-    image: PropTypes.string
+    image: PropTypes.string.isRequired,
+    backImage: PropTypes.string.isRequired
   }
 
 export default Card;
