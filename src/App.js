@@ -1,19 +1,28 @@
 import './App.css';
-//import BestPlayers from "./best-players"
+import BestPlayers from "./best-players"
 import ButtonClick from './button-click';
-import Header from './header/header';
-//import CardList from './card/card-list';
-//import { bestPlayers, cardList } from './test-data';
+import axios from "axios";
+import  { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Main from './pages/main';
+import BestPage from './pages/best.page';
+import Settings from './pages/settings';
+import Header from "./header/header";
+
 
 function App() {
   return (
-    <div className="App">
-     {/* { <BestPlayers players={bestPlayers} />
-        <ButtonClick className="blueButton" text="ADD USER"/>
-        <ButtonClick className="witeButton" text="CANCEL"/> 
-        <CardList cards={cardList} /> } */}
-        <Header />
-    </div>
+    <Router>
+      <div className="App">
+        
+        <Header/>
+        <Switch>
+          <Route exact path="/"><Main/></Route>
+          <Route path="/best-players"><BestPage/></Route>
+          <Route path="/settings"><Settings/></Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

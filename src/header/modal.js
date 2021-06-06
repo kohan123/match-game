@@ -6,7 +6,7 @@ import "./modal.scss";
 
 const Modal = ({ isOpen, onClose}) => {
     return (
-        <div className="modal_window">
+        <div className={`modal_window ${isOpen === true ? "open_window" : ""}`}>
             <h3>Registr new Player</h3>
             <form className="inputs">
                 <input id="inpt_1" type="text" name="name" placeholder="John Doe" />
@@ -16,7 +16,7 @@ const Modal = ({ isOpen, onClose}) => {
             <img src="https://smashinglogo.com/static/img/virtual-designers/peter.gif" />
             <div>
                 <ButtonClick className="blueButton" text="ADD USER" />
-                <ButtonClick className="witeButton" text="CANCEL" />
+                <ButtonClick className="witeButton" text="CANCEL" onClick={onClose}/>
             </div>
         </div>
     );
