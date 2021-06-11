@@ -1,0 +1,21 @@
+.header {
+    background-color: #2196F3;
+    height: 64px;
+    display: flex;
+
+    ul {
+        list-style: none;
+        display: flex;
+        width: fit-content;
+    }
+    li {
+        padding: 15px;
+        width: 104px;
+        padding-right: 10px;
+    }
+}
+.witeButton {
+    float: right;
+    margin-left: 75%;
+    margin-top: 0.8%;
+}
