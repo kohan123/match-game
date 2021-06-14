@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import ButtonClick from '../button-click';
 import Modal from './modal';
 import { Link } from "react-router-dom";
-import "./header.scss"
+import "./header.scss";
+import questions from "../assets/navigation/question.png";
+import settings from "../assets/navigation/settings.png";
+import vector from "../assets/navigation/star.jpg";
 
 const Header = props => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,11 +18,16 @@ const Header = props => {
     }
     return (
         <div className="header">
+            <section className="button_section">
+                <h1 className="header_title">MATCH</h1>
+                <ButtonClick className="match" text="MATCH"/>
+            </section>
+            
             <nav>
                 <ul>
-                    <li><Link to="/">About Game</Link></li>
-                    <li><Link to="/best-players">Best Score</Link></li>
-                    <li><Link to="/settings">Game Settings</Link></li>
+                    <li><Link to="/"><img src={questions}/> About Game</Link></li>
+                    <li><Link to="/best-players"><img src={vector}/>Best Score</Link></li>
+                    <li><Link to="/settings"><img src={settings}/>Game Settings</Link></li>
                 </ul>
             </nav>
            <ButtonClick className="witeButton" text="Register new Player" onClick={openFn}/>
