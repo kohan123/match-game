@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ButtonClick from '../button-click';
 import Modal from './modal';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./header.scss";
 import questions from "../assets/navigation/question.png";
 import settings from "../assets/navigation/settings.png";
@@ -25,9 +25,9 @@ const Header = props => {
             
             <nav>
                 <ul>
-                    <li><Link to="/"><img src={questions}/> About Game</Link></li>
-                    <li><Link to="/best-players"><img src={vector}/>Best Score</Link></li>
-                    <li><Link to="/settings"><img src={settings}/>Game Settings</Link></li>
+                    <li><NavLink exact to="/" activeClassName="selected"><img src={questions}/> About Game</NavLink></li>
+                    <li><NavLink to="/best-players"activeClassName="selected"><img src={vector}/>Best Score</NavLink></li>
+                    <li><NavLink to="/settings" activeClassName="selected"><img src={settings}/>Game Settings</NavLink></li>
                 </ul>
             </nav>
            <ButtonClick className="witeButton" text="Register new Player" onClick={openFn}/>
