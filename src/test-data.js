@@ -1,4 +1,4 @@
-export const bestPlayers = [
+export const bestPlayersInfo = [
     {
         name: "Olga",
         email:"olga@gmail.com",

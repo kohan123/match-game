@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import ButtonClick from '../button-click';
 import Modal from './modal';
 import { NavLink } from "react-router-dom";
@@ -7,8 +7,11 @@ import "./header.scss";
 import questions from "../assets/navigation/question.png";
 import settings from "../assets/navigation/settings.png";
 import vector from "../assets/navigation/star.jpg";
+import { useDispatch } from 'react-redux';
+import { gameStart } from '../action/game';
 
 const Header = props => {
+    const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
     const openFn = () => {
         setIsOpen(true);
@@ -16,6 +19,12 @@ const Header = props => {
     const closeFn = () => {
         setIsOpen(false);
     }
+
+    const startGame = () => {
+       const action = gameStart();
+       dispatch(action); 
+    }
+
     return (
         <div className="header">
             <section className="button_section">
@@ -31,6 +40,7 @@ const Header = props => {
                 </ul>
             </nav>
            <ButtonClick className="witeButton" text="Register new Player" onClick={openFn}/>
+           <ButtonClick className="game" text="Start Game" onClick={startGame}/>
            {isOpen === true && <Modal isOpen={isOpen} onClose={closeFn} />}
         </div>
     );
