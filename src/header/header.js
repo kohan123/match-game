@@ -9,8 +9,10 @@ import settings from "../assets/navigation/settings.png";
 import vector from "../assets/navigation/star.jpg";
 import { useDispatch } from 'react-redux';
 import { gameStart } from '../action/game';
+import { useSelector } from "react-redux";
 
 const Header = props => {
+    const difficulty = useSelector((state) => state.levelList);
     const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
     const openFn = () => {
@@ -21,7 +23,7 @@ const Header = props => {
     }
 
     const startGame = () => {
-       const action = gameStart();
+       const action = gameStart(difficulty);
        dispatch(action); 
     }
 

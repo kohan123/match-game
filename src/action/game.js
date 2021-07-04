@@ -1,8 +1,8 @@
 import { generateCards } from "../common/game.helper";
 
-export const gameStart = () => {
+export const gameStart = (difficulty) => {
     return {
         type: "START_GAME",
-        cards: generateCards()
+        cards: generateCards(difficulty)
     }
 };
