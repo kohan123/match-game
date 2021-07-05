@@ -37,8 +37,8 @@ export const generateCards = (difficulty) => {
             image: cardImage,
             backImage: backcard
         }
-        cards.push(card)
-        cards.push(card)
+        cards.push(card);
+        cards.push(card);
     }
     return cards;
 }

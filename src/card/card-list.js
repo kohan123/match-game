@@ -2,16 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './card';
 
-const CardList = ({ cards }) => {
+const CardList = ({ cards, difficulty }) => {
     return (
-        <div>
+        <div className={`card_list ${difficulty}`}>
             {cards.map((card) => <Card image={card.image} backImage={card.backImage}/>)}
         </div>
     );
 };
+ 
+CardList.defaultProps = {
+    difficulty: "easy" 
+}
 
 CardList.propTypes = {
-   cards: PropTypes.array.isRequired 
+   cards: PropTypes.array.isRequired,
+   difficulty: PropTypes.string 
 };
 
 export default CardList;
