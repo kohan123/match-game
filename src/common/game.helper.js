@@ -12,17 +12,25 @@ function findIndex(min, max) {
     return Math.floor(Math.random() * max ) + min;
 }
 
-export const generateCards = (difficulty) => {
+const getCountOfPairs = (difficulty) => {
     let countOfPairs = 2;
-    if (difficulty === "hard") {
+   switch(difficulty) {
+       case "hard":
         countOfPairs = 5;
-    } else if (difficulty === "medium"){
+        break;
+        case "medium":
         countOfPairs = 3;
-    } else if (difficulty === "easy") {
+        break;
+        case "easy":
         countOfPairs = 2;
-    }
+        break;      
+   }
+   return countOfPairs;
+}
+
+export const generateCards = (difficulty) => {
     let cards = [];
-    for (let i = 0; i < countOfPairs; i++) {
+    for (let i = 0; i < getCountOfPairs(difficulty); i++) {
         const imageIndex =  findIndex(0, images.length);
         const cardImage = images[imageIndex];
         const card = {

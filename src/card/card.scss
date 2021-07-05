@@ -1,11 +1,14 @@
 .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     perspective: 1000px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
     border-radius: 4px;
     margin-bottom: 30px;
+    float: right; 
+    margin-right: 20px;
+    margin-top: 20px;
   }
   
   .flip-card-inner {
