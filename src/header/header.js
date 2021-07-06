@@ -36,9 +36,9 @@ const Header = props => {
             
             <nav>
                 <ul>
-                    <li><NavLink exact to="/" activeClassName="selected"><img src={questions}/> About Game</NavLink></li>
-                    <li><NavLink to="/best-players"activeClassName="selected"><img src={vector}/>Best Score</NavLink></li>
-                    <li><NavLink to="/settings" activeClassName="selected"><img src={settings}/>Game Settings</NavLink></li>
+                    <li><NavLink exact to="/" activeClassName="selected"><img src={questions} alt="questions"/> About Game</NavLink></li>
+                    <li><NavLink to="/best-players"activeClassName="selected"><img src={vector} alt="vector"/>Best Score</NavLink></li>
+                    <li><NavLink to="/settings" activeClassName="selected"><img src={settings} alt="settings"/>Game Settings</NavLink></li>
                 </ul>
             </nav>
            <ButtonClick className="witeButton" text="Register new Player" onClick={openFn}/>

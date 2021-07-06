@@ -1,5 +1,5 @@
 import React from 'react';
-import Display from '../level-list/display';
+//import Display from '../level-list/display';
 import { useSelector } from "react-redux";
 import Game from '../game/game';
 

@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./player-info.scss"
 
 const PlayerInfo = ({player: {name, email, avatar, score}}) => {
     return <div className="playerClass">
         <div className="player_container">
-        <img className="photo" src = {avatar} />
+        <img className="photo" src = {avatar} alt="avatar"/>
         <div className="info_person">
             <p className="name">{name}</p>
             <p className="email">{email}</p>

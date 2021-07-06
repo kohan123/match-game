@@ -23,7 +23,9 @@ const getCountOfPairs = (difficulty) => {
         break;
         case "easy":
         countOfPairs = 2;
-        break;      
+        break;
+        default:
+        countOfPairs = 2;       
    }
    return countOfPairs;
 }

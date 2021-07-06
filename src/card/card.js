@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./card.scss";
 import PropTypes from "prop-types";
-import img from "../assets/card.png";
+
 
 
 const Card = ({image, backImage}) => {
