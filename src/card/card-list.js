@@ -5,7 +5,7 @@ import Card from './card';
 const CardList = ({ cards, difficulty }) => {
     return (
         <div className={`card_list ${difficulty}`}>
-            {cards.map((card) => <Card image={card.image} backImage={card.backImage}/>)}
+            {cards.map((card) => <Card isGuessed={card.isGuessed === true} key={card.id} id={card.id} image={card.image} backImage={card.backImage}/>)}
         </div>
     );
 };

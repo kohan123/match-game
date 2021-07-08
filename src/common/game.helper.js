@@ -30,6 +30,10 @@ const getCountOfPairs = (difficulty) => {
    return countOfPairs;
 }
 
+export const generateRandomId = () => {
+    return Math.floor(Math.random() * 2000);
+};
+
 export const generateCards = (difficulty) => {
     let cards = [];
     for (let i = 0; i < getCountOfPairs(difficulty); i++) {
@@ -39,8 +43,8 @@ export const generateCards = (difficulty) => {
             image: cardImage,
             backImage: backcard
         }
-        cards.push(card);
-        cards.push(card);
+        cards.push( {...card, id: generateRandomId()} );
+        cards.push( {...card, id: generateRandomId()} );
     }
     return cards;
 }
