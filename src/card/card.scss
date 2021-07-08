@@ -8,6 +8,10 @@
     margin-bottom: 30px;
     margin-top: 20px;
     flex: 0 1 24%;
+
+    &.guessed {
+      border: 5px solid rgb(87, 163, 11);
+    }
   }
   
   .flip-card-inner {
