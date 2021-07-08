@@ -16,7 +16,17 @@ export const game = (state = gameState, action) => {
             };
         case "ADD_STEP": {
             return {
-            ...state,steps: [ ...state.steps, action.step ]
+                ...state,
+                steps: [ ...state.steps, action.step ],
+                cards: state.cards.map(card => {
+                    if (card.id === action.step.id) {
+                      return { ...card, isFliped: true};
+                    } else {
+                        return {
+                            ...card
+                        };
+                    }
+                })
             };
         }
         case "СARDS_GUESSED" : {
@@ -28,7 +38,8 @@ export const game = (state = gameState, action) => {
                     if (card.id === id1 || card.id === id2) {
                         return {
                             ...card,
-                            isGuessed: true
+                            isGuessed: true,
+                            isFliped: true
                         }
                     } else {
                         return card;
@@ -40,7 +51,8 @@ export const game = (state = gameState, action) => {
         case "СARDS_NOT_GUESSED": {
             return {
                 ...state,
-                steps: []
+                steps: [],
+                cards: state.cards.map(card => ({...card, isFliped: false}))
             }
         }
       
